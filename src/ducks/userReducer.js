@@ -15,7 +15,6 @@ const KILL_USER = "KILL_USER";
 
 export function getData() {
   let data = axios.get("/auth/user-data").then(res => {
-    console.log(res.data);
     return res.data;
   });
   return {

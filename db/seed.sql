@@ -14,23 +14,13 @@ CREATE TABLE account (
 
 
 
-CREATE TABLE Author (
-	author_first varchar(80) NOT NULL,
-	author_last varchar(80) NOT NULL,
-	author_id serial NOT NULL,
-	CONSTRAINT Author_pk PRIMARY KEY (author_id)
-) WITH (
-  OIDS=FALSE
-);
-
-
-
 CREATE TABLE Book (
-	author_id bigint NOT NULL,
 	book_title varchar(80) NOT NULL UNIQUE,
 	book_desc TEXT NOT NULL,
 	book_price DECIMAL NOT NULL,
 	book_id serial NOT NULL,
+	book_author_name varchar(80) NOT NULL,
+	book_cover_img TEXT NOT NULL,
 	CONSTRAINT Book_pk PRIMARY KEY (book_id)
 ) WITH (
   OIDS=FALSE
@@ -61,8 +51,6 @@ CREATE TABLE purchases_info (
 
 
 
-
-ALTER TABLE Book ADD CONSTRAINT Book_fk0 FOREIGN KEY (author_id) REFERENCES Author(author_id);
 
 ALTER TABLE purchases ADD CONSTRAINT purchases_fk0 FOREIGN KEY (account_id) REFERENCES account(account_id);
 

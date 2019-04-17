@@ -5,7 +5,6 @@ import { connect } from "react-redux";
 import { getData, killUser } from "../ducks/userReducer";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import Dropdown from "react-bootstrap/Dropdown";
-import axios from 'axios'
 import { withRouter } from 'react-router-dom'
 
 export class Nav extends Component {
@@ -16,6 +15,7 @@ export class Nav extends Component {
       booksClicked: false,
       aboutClicked: false,
       accountClicked: false,
+      eventsClicked: false,
       loginClicked: false
     };
   }
@@ -30,23 +30,38 @@ export class Nav extends Component {
       booksClicked: false,
       aboutClicked: false,
       accountClicked: false,
+      eventsClicked: false,
       loginClicked: false,
       [clicked]: true
     });
   };
 
-  handleLogout = () => {
-    console.log(this.props)
-    console.log('hit logout function')
-    this.props.killUser()
+  handleLogout = async () => {
+    await this.props.killUser()
+    await this.props.history.push('/')
+    this.setState({
+        homeClicked: true,
+        booksClicked: false,
+        aboutClicked: false,
+        accountClicked: false,
+        eventsClicked: false,
+        loginClicked: false
+    })
   };
 
   sendToAccountInfo = () => {
     this.props.history.push('/account')
+    this.setState({
+      homeClicked: false,
+      booksClicked: false,
+      aboutClicked: false,
+      accountClicked: false,
+      eventsClicked: false,
+      loginClicked: false
+    });
   }
 
   render() {
-    console.log(this.props)
     const { id } = this.props;
 
     return (
@@ -75,6 +90,18 @@ export class Nav extends Component {
           </Button>
         </Link>
 
+        <Link to="/events">
+          <Button
+            className="nav-button"
+            onClick={() => this.handleClick("eventsClicked")}
+            variant="secondary"
+            size="lg"
+            disabled={this.state.eventsClicked}
+          >
+            Events
+          </Button>
+        </Link>
+
         <Link to="/about">
           <Button
             className="nav-button"
@@ -89,7 +116,7 @@ export class Nav extends Component {
 
         {id ? (
           <DropdownButton
-            className="nav-button"
+          className='bob'
             alignRight
             title="Account"
             id="dropdown-menu-align-right"
@@ -116,7 +143,7 @@ export class Nav extends Component {
   }
 }
 
-const mapState = reduxState => reduxState;
+const mapState = reduxState => reduxState.userReducer;
 
 export default withRouter(connect(
   mapState,

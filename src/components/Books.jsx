@@ -1,37 +1,32 @@
 import React, { Component } from "react";
+import BookCardCreator from "./BookCardCreator";
+import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import { getAllBooks } from "../ducks/booksReducer";
 
 export class Books extends Component {
+  componentDidMount() {
+    this.props.getAllBooks();
+  }
+
   render() {
     return (
-      <div className="component-holder">
+      <div className="book-main-holder">
         <h1 className="page-title">Books</h1>
-        <div>
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum
-            laudantium, tenetur deserunt iusto esse autem corporis illo ad,
-            velit nemo asperiores. Quam ipsa corrupti earum cupiditate sed
-            atque? Officia, rerum! Lorem, ipsum dolor sit amet consectetur
-            adipisicing elit. Rerum laudantium, tenetur deserunt iusto esse
-            autem corporis illo ad, velit nemo asperiores. Quam ipsa corrupti
-            earum cupiditate sed atque? Officia, rerum! Lorem, ipsum dolor sit
-            amet consectetur adipisicing elit. Rerum laudantium, tenetur
-            deserunt iusto esse autem corporis illo ad, velit nemo asperiores.
-            Quam ipsa corrupti earum cupiditate sed atque? Officia, rerum!
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum
-            laudantium, tenetur deserunt iusto esse autem corporis illo ad,
-            velit nemo asperiores. Quam ipsa corrupti earum cupiditate sed
-            atque? Officia, rerum! Lorem, ipsum dolor sit amet consectetur
-            adipisicing elit. Rerum laudantium, tenetur deserunt iusto esse
-            autem corporis illo ad, velit nemo asperiores. Quam ipsa corrupti
-            earum cupiditate sed atque? Officia, rerum! Lorem, ipsum dolor sit
-            amet consectetur adipisicing elit. Rerum laudantium, tenetur
-            deserunt iusto esse autem corporis illo ad, velit nemo asperiores.
-            Quam ipsa corrupti earum cupiditate sed atque? Officia, rerum!
-          </p>
+        <Link to="/addBook">Add Book</Link>
+        <div className="book-card-holder">
+          {this.props.books.map(book => {
+            return <BookCardCreator book={book} />
+          })}
         </div>
       </div>
     );
   }
 }
 
-export default Books;
+const mapState = reduxState => reduxState.booksReducer;
+
+export default connect(
+  mapState,
+  { getAllBooks }
+)(Books);

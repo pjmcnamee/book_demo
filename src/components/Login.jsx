@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Axios from 'axios';
@@ -26,6 +26,7 @@ export class Login extends Component {
 			email: '',
 			password: ''
 		})
+		this.props.history.push('/')
 	}
 
 	handleLogin = async () => {
@@ -54,7 +55,7 @@ export class Login extends Component {
           </Form.Group>
 
 		  <div className='register-buttons'>
-		  <Link to='/home'>
+		  <Link to='/'>
           <Button onClick={() => this.cancelLogin()} variant="primary" type="submit">
             Cancel
           </Button>
@@ -72,4 +73,4 @@ export class Login extends Component {
   }
 }
 
-export default connect(null, {getData})(Login)
+export default withRouter(connect(null, {getData})(Login))

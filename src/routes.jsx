@@ -6,15 +6,19 @@ import Account from './components/Account'
 import About from './components/About'
 import Login from './components/Login'
 import Register from './components/Register'
+import Events from './components/Events'
+import AddBookForm from './components/AddBookForm'
 
 export default (
   <Switch>
     <Route exact path="/" component={Home} />
     <Route path="/books" component={Books} />
     <Route path="/account" component={Account} />
+    <Route path="/events" component={Events} />
     <Route path="/about" component={About} />
     <Route path="/login" component={Login} />
     <Route path="/register" component={Register} />
+    <Route path='/addBook' component={AddBookForm} />
   </Switch>
 );
 

@@ -1,5 +1,8 @@
-import {createStore, applyMiddleware} from 'redux'
+import {createStore, applyMiddleware, combineReducers} from 'redux'
 import userReducer from './ducks/userReducer'
+import booksReducer from './ducks/booksReducer'
 import promiseMiddleware from 'redux-promise-middleware'
 
-export default createStore(userReducer, applyMiddleware(promiseMiddleware))
+const rootReducer = combineReducers({ userReducer, booksReducer})
+
+export default createStore(rootReducer, applyMiddleware(promiseMiddleware))

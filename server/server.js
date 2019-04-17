@@ -2,7 +2,9 @@ require("dotenv").config();
 const express = require("express");
 const massive = require("massive");
 const session = require("express-session");
-const authCtrl = require('./controllers/userCtrl')
+const authCtrl = require('./controllers/authCtrl')
+const accCtrl = require('./controllers/accCtrl')
+const bookCtrl = require('./controllers/bookCtrl')
 
 const { SERVER_PORT, SESSION_SECRET, CONNECTION_STRING } = process.env;
 
@@ -32,7 +34,15 @@ app.get('/auth/user-data', authCtrl.userData)
 app.post('/auth/register', authCtrl.register)
 app.post('/auth/login', authCtrl.login)
 app.get('/auth/logout', (req,res) => {
-  console.log('server side logout hit')
   req.session.destroy()
   res.redirect('http://localhost:3000/#/')
 })
+//user edit
+
+app.put('/api/update/:id', accCtrl.update)
+
+
+//book endpoints
+app.post('/api/addbook',bookCtrl.add)
+app.get('/api/books', bookCtrl.getBooks)
+
