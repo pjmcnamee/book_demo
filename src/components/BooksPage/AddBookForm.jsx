@@ -4,6 +4,8 @@ import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { withRouter } from "react-router-dom";
+import { getData } from "../../ducks/userReducer";
+import { connect } from "react-redux";
 
 export class AddBookForm extends Component {
   constructor(props) {
@@ -15,6 +17,10 @@ export class AddBookForm extends Component {
       book_author_name: "",
       book_cover_img: ""
     };
+  }
+
+  componentDidMount() {
+    this.props.getData();
   }
 
   handleInputChange = (type, e) => {
@@ -57,7 +63,7 @@ export class AddBookForm extends Component {
   render() {
     return (
       <div className="component-holder">
-        <h1 className="page-title">Add Book</h1>
+        {this.props.admin ? <div> <h1 className="page-title">Add Book</h1>
         <Form>
           <Form.Group controlId="formBasicBookTitle">
             <Form.Label className="form-label">Book Title</Form.Label>
@@ -121,10 +127,12 @@ export class AddBookForm extends Component {
               Add Book
             </Button>
           </div>
-        </Form>
+        </Form> </div> : <div> <h2 className='admin-only'>Admins only on this page</h2> <Link to='/'>Back to Home Page</Link></div>}
       </div>
     );
   }
 }
 
-export default withRouter(AddBookForm);
+const mapState = reduxState => reduxState.userReducer;
+
+export default withRouter(connect(mapState, { getData })(AddBookForm));

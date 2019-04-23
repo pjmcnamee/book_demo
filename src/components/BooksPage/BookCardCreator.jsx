@@ -11,7 +11,7 @@ export default function BookCardCreator(props) {
     </Popover>
   );
 
-  const Example = () => (
+  const BookSummary = () => (
     <OverlayTrigger trigger="click" placement="right" overlay={popover}>
       <Button variant="success">Book Summary</Button>
     </OverlayTrigger>
@@ -20,20 +20,17 @@ export default function BookCardCreator(props) {
   return (
     <div className="book-card" key={props.book.book_id}>
       <Card style={{ width: "18rem" }}>
-        <Card.Img variant="top" src={props.book.book_cover_img} />
+        <Card.Img  style={{width: 285, height: 400}} variant="top" src={props.book.book_cover_img} />
         <Card.Body>
           <Card.Title>{props.book.book_title}</Card.Title>
-          <Card.Text>
-            <p className="card-text">
-              <span className="card-span">Author: </span>
-              {props.book.book_author_name}
-            </p>
-            <p className="card-text">
-              <span className="card-span">Book Price: $</span>
-              {props.book.book_price}
-            </p>
+          <Card.Text className="card-text">
+            <span className="card-span">Author: </span>
+            {props.book.book_author_name}
+
+            <span className="card-span">Book Price: </span>
+            {`$${props.book.book_price}`}
           </Card.Text>
-          <Example />
+          <BookSummary />
         </Card.Body>
       </Card>
     </div>

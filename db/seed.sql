@@ -50,9 +50,39 @@ CREATE TABLE purchases_info (
 
 
 
+CREATE TABLE article (
+	article_id serial NOT NULL,
+	article_image TEXT NOT NULL,
+	article_title varchar(80) NOT NULL,
+	article_text TEXT NOT NULL,
+	article_teaser TEXT NOT NULL,
+	article_posting_date DATE DEFAULT CURRENT_DATE,
+	CONSTRAINT articles_pk PRIMARY KEY (article_id)
+) WITH (
+  OIDS=FALSE
+);
+
+
+
+CREATE TABLE newsletter_subscription (
+	newsletter_subscription_email varchar(80) NOT NULL UNIQUE,
+	newsletter_subscription_id serial NOT NULL,
+	CONSTRAINT newsletter_subscription_pk PRIMARY KEY (newsletter_subscription_id)
+) WITH (
+  OIDS=FALSE
+);
+
 
 
 ALTER TABLE purchases ADD CONSTRAINT purchases_fk0 FOREIGN KEY (account_id) REFERENCES account(account_id);
 
 ALTER TABLE purchases_info ADD CONSTRAINT purchases_info_fk0 FOREIGN KEY (purchases_id) REFERENCES purchases(purchases_id);
 ALTER TABLE purchases_info ADD CONSTRAINT purchases_info_fk1 FOREIGN KEY (book_id) REFERENCES Book(book_id);
+
+
+
+
+
+
+
+

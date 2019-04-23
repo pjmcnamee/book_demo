@@ -5,6 +5,9 @@ const session = require("express-session");
 const authCtrl = require('./controllers/authCtrl')
 const accCtrl = require('./controllers/accCtrl')
 const bookCtrl = require('./controllers/bookCtrl')
+const adminCtrl = require('./controllers/adminCtrl')
+const articlesCtrl = require('./controllers/articlesCtrl')
+const newsLetterCtrl = require('./controllers/newsLetterCtrl')
 
 const { SERVER_PORT, SESSION_SECRET, CONNECTION_STRING } = process.env;
 
@@ -37,12 +40,20 @@ app.get('/auth/logout', (req,res) => {
   req.session.destroy()
   res.redirect('http://localhost:3000/#/')
 })
+
 //user edit
-
 app.put('/api/update/:id', accCtrl.update)
-
 
 //book endpoints
 app.post('/api/addbook',bookCtrl.add)
 app.get('/api/books', bookCtrl.getBooks)
+app.delete('/api/books', bookCtrl.deleteBook)
 
+//admin endpoints
+
+//articles control
+app.post('/api/addArticles', articlesCtrl.addArticle)
+app.get('/api/articles', articlesCtrl.getArticles)
+
+//newsletter control
+app.post("/api/newsletter", newsLetterCtrl.subscribe)

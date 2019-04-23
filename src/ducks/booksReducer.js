@@ -19,7 +19,6 @@ export function getAllBooks(){
 export default function reducer(state = initialState, action) {
 	switch (action.type) {
 		case GET_BOOKS + "_FULFILLED":
-		console.log('inside case',action.payload)
 		return {...state, books: action.payload}
 		default:
 		return state;

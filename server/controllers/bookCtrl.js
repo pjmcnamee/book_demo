@@ -14,5 +14,9 @@ module.exports = {
 		const books = await db.get_books()
 
 		res.status(200).send(books)
+	},
+
+	deleteBook(req,res){
+		
 	}
 }

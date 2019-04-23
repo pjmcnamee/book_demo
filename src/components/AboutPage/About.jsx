@@ -1,12 +1,12 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
+import InstagramEmbed from "react-instagram-embed";
 
-export class Home extends Component {
-	
+export class About extends Component {
   render() {
-	return (
-	  <div className='component-holder'>
-		  <h1 className='page-title'>Home</h1>
-			<div>
+    return (
+      <div className="component-holder">
+        <h1 className="page-title">About</h1>
+        <div>
           <p>
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum
             laudantium, tenetur deserunt iusto esse autem corporis illo ad,
@@ -30,9 +30,23 @@ export class Home extends Component {
             Quam ipsa corrupti earum cupiditate sed atque? Officia, rerum!
           </p>
         </div>
-	  </div>
-	)
+        <div className="insta-holder">
+          <InstagramEmbed
+            url="https://instagr.am/p/Zw9o4/"
+            maxWidth={320}
+            hideCaption={false}
+            containerTagName="div"
+            protocol=""
+            injectScript
+            onLoading={() => {}}
+            onSuccess={() => {}}
+            onAfterRender={() => {}}
+            onFailure={() => {}}
+          />
+        </div>
+      </div>
+    );
   }
 }
 
-export default Home
+export default About;

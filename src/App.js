@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import {HashRouter} from 'react-router-dom'
-import Nav from './components/Nav'
 import routes from './routes'
+import Header from './components/Header/Header';
 
 
 class App extends Component {
@@ -10,10 +10,8 @@ class App extends Component {
     return (
       <HashRouter>
         <div className="jank">
-        <div className='main-holder'>
-        <Nav />
+        <Header />
         {routes}
-        </div>
         </div>
       </HashRouter>
     );

@@ -51,7 +51,6 @@ register = async (e) => {
 }
 
   render() {
-	console.log(this.state)
     return (
       <div className="component-holder">
         <h1 className="page-title">Register</h1>

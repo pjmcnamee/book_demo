@@ -3,7 +3,7 @@ import { Link, withRouter } from 'react-router-dom'
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Axios from 'axios';
-import { getData } from "../ducks/userReducer";
+import { getData } from "../../ducks/userReducer";
 import { connect } from "react-redux";
 
 export class Login extends Component {
