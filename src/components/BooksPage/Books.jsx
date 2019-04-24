@@ -10,13 +10,17 @@ export class Books extends Component {
     this.props.getData();
   }
 
+  refreshBooks = () => {
+    this.props.getAllBooks();
+  }
+
   render() {
     return (
       <div className="book-main-holder">
         <h1 className="page-title">Books</h1>
         <div className="book-card-holder">
           {this.props.booksReducer.books.map(book => {
-            return <BookCardCreator key={book.book_id} book={book} />
+            return <BookCardCreator refreshBooks={this.refreshBooks} key={book.book_id} book={book} />
           })}
         </div>
       </div>

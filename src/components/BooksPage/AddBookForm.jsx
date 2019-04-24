@@ -6,6 +6,7 @@ import axios from "axios";
 import { withRouter } from "react-router-dom";
 import { getData } from "../../ducks/userReducer";
 import { connect } from "react-redux";
+import swal from 'sweetalert';
 
 export class AddBookForm extends Component {
   constructor(props) {
@@ -56,7 +57,7 @@ export class AddBookForm extends Component {
       book_price,
       book_author_name,
       book_cover_img
-    });
+    }).then(res => swal("Good job!", res.data.message, "success"));
     this.props.history.push("/books");
   };
 

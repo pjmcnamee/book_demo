@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import axios from "axios";
+import swal from 'sweetalert';
+
+
 
 export class NewsLetter extends Component {
   constructor(props) {
@@ -21,7 +24,7 @@ export class NewsLetter extends Component {
     const { email } = this.state;
     axios
       .post("/api/newsletter", { email })
-      .then(res => alert("You have subscribed!"))
+      .then(res => {res.data.success ? swal("Good job!", res.data.message, "success") : swal("Error!", res.data.message, "error")})
       .catch(err => console.log(err));
   };
 

@@ -5,10 +5,9 @@ import { Link } from 'react-router-dom'
 
 export class ArticlesCardCreator extends Component {
   render() {
-    console.log('props',this.props)
 	return (
 	  <div>
-		<Card className="text-center">
+		<Card  className="text-center">
               <Card.Header>Featured Articles</Card.Header>
               <Card.Body>
                 <Card.Title>{this.props.article.article_title}</Card.Title>

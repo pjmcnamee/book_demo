@@ -3,8 +3,26 @@ import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Popover from "react-bootstrap/Popover";
+import axios from "axios";
+import swal from 'sweetalert';
+import { connect } from "react-redux";
+import { getData } from "../../ducks/userReducer";
 
-export default function BookCardCreator(props) {
+function BookCardCreator(props) {
+
+ const componentDidMount = () =>{
+    props.getData();
+  }
+
+  componentDidMount()
+
+  const deleteBook = async (id) => {
+    await axios.delete(`/api/books/${id}`).then(res => swal("Good job!", res.data.message, "success"))
+
+    props.refreshBooks()
+  }
+
+
   const popover = (
     <Popover id="popover-basic" title="Book Summary">
       {props.book.book_desc}
@@ -31,8 +49,13 @@ export default function BookCardCreator(props) {
             {`$${props.book.book_price}`}
           </Card.Text>
           <BookSummary />
+          {props.admin ? <Button onClick={() => deleteBook(props.book.book_id)} variant="danger">Delete Book</Button> : null}
         </Card.Body>
       </Card>
     </div>
   );
 }
+
+const mapState = reduxState => reduxState.userReducer;
+
+export default connect(mapState, { getData })(BookCardCreator)

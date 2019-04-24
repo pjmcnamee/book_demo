@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { TwitterTimelineEmbed, TwitterFollowButton } from "react-twitter-embed";
 import axios from "axios";
 import ArticlesCardCreator from "../Articles/ArticlesCardCreator";
+import Button from "react-bootstrap/Button";
+import { Link } from "react-router-dom";
 
 export class Home extends Component {
   constructor(props) {
@@ -11,12 +13,11 @@ export class Home extends Component {
     };
   }
 
-  componentDidMount(){
+  componentDidMount() {
     axios
       .get("/api/articles")
       .then(res => {
-        console.log(res.data)
-        this.setState({articles: res.data})
+        this.setState({ articles: res.data });
       })
       .catch(err => console.log(err));
   }
@@ -24,15 +25,30 @@ export class Home extends Component {
   render() {
     return (
       <div className="component-holder">
-        <h1 className="page-title">Home</h1>
-          <h2>WORK ON DELETE BOOK AND NEWSLETTER EMAIL CHECK</h2>
-        <div>
-          <p>
+        {/* <h1 className="page-title">Home</h1> */}
+        {/* <div className="main-text-holder"> */}
+          {/* <p className="main-text">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos
+            non at cumque similique quam obcaecati qui ratione voluptatum nisi
+            saepe consequatur, aperiam ab ipsam sunt nobis harum odit blanditiis
+            quia.Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos
+            non at cumque similique quam obcaecati qui ratione voluptatum nisi
+            saepe consequatur, aperiam ab ipsam sunt nobis harum odit blanditiis
+            quia.Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos
             non at cumque similique quam obcaecati qui ratione voluptatum nisi
             saepe consequatur, aperiam ab ipsam sunt nobis harum odit blanditiis
             quia.
           </p>
+        </div> */}
+
+        <div className="news-letter-home-page">
+        <div className='news-home-border'>
+          <h2 className='news-title'>Newsletter</h2>
+          <p>Subscribe to newsletter to recieve updates about upcoming books and releases</p>
+          <Link to="/newsletter">
+            <Button variant="secondary">To Newsletter</Button>
+          </Link>
+        </div>
         </div>
 
         <div className="home-holder">
@@ -46,9 +62,14 @@ export class Home extends Component {
           </div>
 
           <div className="artical-holder">
-          {this.state.articles.map(article => {
-            return <ArticlesCardCreator article={article}/>
-          })}
+            {this.state.articles.map(article => {
+              return (
+                <ArticlesCardCreator
+                  key={article.article_id}
+                  article={article}
+                />
+              );
+            })}
           </div>
         </div>
       </div>

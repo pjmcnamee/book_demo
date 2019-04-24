@@ -47,7 +47,7 @@ app.put('/api/update/:id', accCtrl.update)
 //book endpoints
 app.post('/api/addbook',bookCtrl.add)
 app.get('/api/books', bookCtrl.getBooks)
-app.delete('/api/books', bookCtrl.deleteBook)
+app.delete('/api/books/:id', bookCtrl.deleteBook)
 
 //admin endpoints
 

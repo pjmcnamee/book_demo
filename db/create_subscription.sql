@@ -1,0 +1,1 @@
+insert into newsletter_subscription (newsletter_subscription_email) values($1)

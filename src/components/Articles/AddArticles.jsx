@@ -6,6 +6,7 @@ import axios from "axios";
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { getData } from "../../ducks/userReducer";
+import swal from 'sweetalert';
 
 export class AddArticles extends Component {
   constructor(props) {
@@ -36,7 +37,7 @@ export class AddArticles extends Component {
       articleTitle,
       articleText,
       articleTeaser
-    });
+    }).then(res => swal("Good job!", res.data.message, "success"));
 
     this.props.history.push("/account");
   };

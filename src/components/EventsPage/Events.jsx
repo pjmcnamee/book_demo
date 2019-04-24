@@ -4,7 +4,7 @@ import Calendar from './Calendar'
 export class Events extends Component {
   render() {
 	return (
-		<div className="component-holder">
+		<div className="calendar-holder">
         <div>
           <Calendar/>
         </div>

@@ -1,1 +1,1 @@
-select * from account where account = $1
+select * from account where account_email = $1

@@ -55,7 +55,7 @@ export class Nav extends Component {
             size="lg"
             disabled={this.props.state.newsletterClicked}
           >
-            NewsLetter
+            Newsletter
           </Button>
         </Link>
 
