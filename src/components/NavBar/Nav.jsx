@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import Button from "react-bootstrap/Button";
+import LoginNav from './LoginNav'
 
 export class Nav extends Component {
   constructor() {
@@ -14,10 +15,10 @@ export class Nav extends Component {
         <Link to="/">
           <Button
             className="nav-button"
-            onClick={() => this.props.handleClick("homeClicked")}
+            // onClick={() => this.props.handleClick("homeClicked")}
             variant="secondary"
             size="lg"
-            disabled={this.props.state.homeClicked}
+            // disabled={this.props.state.homeClicked}
           >
             Home
           </Button>
@@ -26,10 +27,10 @@ export class Nav extends Component {
         <Link to="/books">
           <Button
             className="nav-button"
-            onClick={() => this.props.handleClick("booksClicked")}
+            // onClick={() => this.props.handleClick("booksClicked")}
             variant="secondary"
             size="lg"
-            disabled={this.props.state.booksClicked}
+            // disabled={this.props.state.booksClicked}
           >
             Books
           </Button>
@@ -38,10 +39,10 @@ export class Nav extends Component {
         <Link to="/updates">
           <Button
             className="nav-button"
-            onClick={() => this.props.handleClick("updatesClicked")}
+            // onClick={() => this.props.handleClick("updatesClicked")}
             variant="secondary"
             size="lg"
-            disabled={this.props.state.updatesClicked}
+            // disabled={this.props.state.updatesClicked}
           >
             Updates
           </Button>
@@ -50,10 +51,10 @@ export class Nav extends Component {
         <Link to="/newsletter">
           <Button
             className="nav-button"
-            onClick={() => this.props.handleClick("newsletterClicked")}
+            // onClick={() => this.props.handleClick("newsletterClicked")}
             variant="secondary"
             size="lg"
-            disabled={this.props.state.newsletterClicked}
+            // disabled={this.props.state.newsletterClicked}
           >
             Newsletter
           </Button>
@@ -62,10 +63,10 @@ export class Nav extends Component {
         <Link to="/events">
           <Button
             className="nav-button"
-            onClick={() => this.props.handleClick("eventsClicked")}
+            // onClick={() => this.props.handleClick("eventsClicked")}
             variant="secondary"
             size="lg"
-            disabled={this.props.state.eventsClicked}
+            // disabled={this.props.state.eventsClicked}
           >
             Events
           </Button>
@@ -74,14 +75,15 @@ export class Nav extends Component {
         <Link to="/about">
           <Button
             className="nav-button"
-            onClick={() => this.props.handleClick("aboutClicked")}
+            // onClick={() => this.props.handleClick("aboutClicked")}
             variant="secondary"
             size="lg"
-            disabled={this.props.state.aboutClicked}
+            // disabled={this.props.state.aboutClicked}
           >
             About
           </Button>
         </Link>
+        <LoginNav />
       </div>
     );
   }

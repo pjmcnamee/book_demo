@@ -6,9 +6,9 @@ import { Link } from 'react-router-dom'
 export class ArticlesCardCreator extends Component {
   render() {
 	return (
-	  <div>
+	  <div className='real-article-holder'>
 		<Card  className="text-center">
-              <Card.Header>Featured Articles</Card.Header>
+              <Card.Header>Featured Article</Card.Header>
               <Card.Body>
                 <Card.Title>{this.props.article.article_title}</Card.Title>
                 <Card.Text>

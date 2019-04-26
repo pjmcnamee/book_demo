@@ -1,22 +1,155 @@
+* {
+  font-family: 'Roboto Slab', serif;
+}
+
 .App {
   text-align: center;
 }
 
-body {
-  background-image: url("./images/519d3801defcfbc9041e618ab8531153.jpg");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center center;
-  background-size: cover;
+/* PARRALAX SHIZZZZZZZZZZZZZZZZZZ */
+
+.home {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
-.header-container{
+.temp{
+  width: 100%;
+  height: 92vh;
+}
+
+.sky-broken {
+  position: absolute;
+width: 100%;
+top: -16%;
+}
+
+.right-tree {
+  position: absolute;
+  right: 0;
+  z-index: 4;
+  top: -10%;
+}
+
+.left-tree {
+  position: absolute;
+  left: 0;
+  z-index: 4;
+  top: -10%;
+}
+
+.lake {
+  position: absolute;
+  left: 30%;
+  top: 76%;
+}
+
+.mountains {
+  position: absolute;
+  top: 68%;
+  left: 15%;
+  z-index: 1;
+}
+
+.tree-parts {
+  position: absolute;
+  left: 29%;
+  top: 70%;
+  z-index: 2;
+}
+
+.far-trees {
+  position: absolute;
+  left: 30%;
+  top: 70%;
+  z-index: 2;
+}
+
+.close-trees {
+  position: absolute;
+  left: 23%;
+  top: 71%;
+  z-index: 2;
+}
+
+.more-mountain-parts {
+  position: absolute;
+  top: 69%;
+  left: 10%;
+  z-index: 1;
+}
+
+.lake {
+  position: absolute;
+  left: 35%;
+  z-index: 2;
+}
+
+.rock {
+  position: absolute;
+  top: 77%;
+  left: 50%;
+  z-index: 3;
+}
+
+.sun {
+  position: absolute;
+  top: 65%;
+  left: 48%;
+  z-index: 0;
+}
+
+.nav-button-holder {
+  display: flex;
+  background-color: #372d3b;
+  z-index: 10;
+  height: 65px;
+  align-items: center;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+}
+
+.text-center{
+  width: 50%;
+}
+
+.home-content{
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  z-index: 2;
+}
+
+.real-article-holder {
+  display: flex;
+  justify-content: center;
+  z-index: 2;
+}
+
+.book-home-holder {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: #c4415D;
 }
+
+.articles-holder {
+  display: flex;
+  position: relative;
+  background-color: #372d3b;
+  z-index: 2;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* PARRALAX SHIZZZZZZZZZZZZZZZZZZ */
+
 
 .titles-holder {
   display: flex;
@@ -26,30 +159,25 @@ body {
   color: white;
 }
 
-.titles-holder > h1{
+.titles-holder > h1 {
   justify-self: center;
   align-self: center;
 }
 
-.titles-holder > h2{
+.titles-holder > h2 {
   justify-self: center;
   align-self: center;
 }
 
-.login-button-container{
+.login-button-container {
   justify-self: flex-end;
   align-self: flex-end;
+  padding-bottom: 10px;
 }
 
-
-.jank {
-  width: 100%;
-  min-height: 100vh;
-  background-color: rgba(0, 0, 0, 0.6);
-}
 
 .nav-button {
-  color: white;
+  color: #ffffde;
   background: none;
   border: none;
 }
@@ -70,7 +198,7 @@ body {
 }
 
 p {
-  color: white;
+  color: #ffffde;
 }
 
 .form-label {
@@ -154,29 +282,26 @@ p {
   flex-direction: column;
 }
 
-.artical-holder {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  width: 50%;
-}
-  
 .admin-only {
   color: red;
 }
 
+a{
+  text-decoration: none;
+  color: #ffffde
+}
 
 .article-image {
-  width:200px;
+  width: 200px;
   height: 200px;
 }
 
-.news-title {
-  color: white;
+h1,h2,h3,h4 {
+  color: #D94362;
 }
 
-.main-text-holder{
-  display:flex;
+.main-text-holder {
+  display: flex;
   width: 70%;
   justify-content: center;
   align-content: center;
@@ -185,12 +310,13 @@ p {
 .news-letter-home-page {
   display: flex;
   justify-content: center;
-  /* background-color: rgba(0, 0, 0, 0.2); */
+  background-color: #372d3b;
+  color: #ffffde;
   padding-top: 15px;
   width: 100%;
   height: 300px;
+  z-index: 4;
 }
-
 
 .news-home-border {
   display: flex;
@@ -199,16 +325,125 @@ p {
   justify-content: center;
   width: 90%;
   height: 90%;
-  border: solid 0.5px white;
+  border: solid 0.5px #ffffde;
+}
+
+.news-letter-button {
+  color: #ffffde;
+  background: none;
+  border-color: #ffffde;
+}
+
+.footer{
+  position: absolute;
+  z-index: 10;
+  width: 100%;
+  top: 395%;
+  height: 300px;
+  display: flex;
+  background-color: #372d3b;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-space-maker {
+  position: relative;
+  z-index: 0;
+  height: 25vh;
+  background-color: #c4415D;
+}
+
+/* SECOND PARALAX CRAP */
+
+
+.purple-soil {
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  top: 74%;
+}
+
+.pink-soil {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  top: 65%;
+}
+
+/* THIRD PARALAX CRAP */
+
+.bottom-temp{
+  height: 100vh;
+}
+
+.pink-cave-roof {
+  position: absolute;
+  width: 100%;
+  top: 297%;
+  z-index: 7;
+}
+
+.purple-cave-roof {
+  position: absolute;
+  width: 100%;
+  top: 299%;
+  z-index:6;
+}
+
+.purple-cave-roof-trees {
+  position: absolute;
+  width: 100%;
+  top: 302%;
+  z-index: 5;
+}
+
+.purple-cave-close{
+  position: absolute;
+  top: 302%;
+  z-index: 4;
+  width: 97%;
+}
+
+.dark-purple-trees{
+  position: absolute;
+  top: 345%;
+  z-index: 3;
+  width: 100%;
+}
+
+.pink-trees{
+  position: absolute;
+  width: 100%;
+  top: 340%;
+  z-index: 3;
+}
+
+.rays {
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+}
+
+.yellow-ray {
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+}
+
+.bottom-cave {
+  position: absolute;
+  top: 299%;
+  z-index: 2;
 }
 
 /* PASTED CSS CHECK THIS CRAP LATER */
 
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300, 400, 700);
 @import url(https://fonts.googleapis.com/icon?family=Material+Icons);
 
 .icon {
-  font-family: 'Material Icons', serif;
+  font-family: "Material Icons", serif;
   font-style: normal;
   display: inline-block;
   vertical-align: middle;
@@ -222,9 +457,8 @@ p {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   -moz-osx-font-smoothing: grayscale;
-  font-feature-settings: 'liga';
+  font-feature-settings: "liga";
 }
-
 
 /* VARIABLES */
 
@@ -237,13 +471,11 @@ p {
   --neutral-color: #fff;
 }
 
-
 /* GENERAL */
 
 * {
   box-sizing: border-box;
 }
-
 
 /* GRID */
 
@@ -281,7 +513,6 @@ p {
   text-align: right;
 }
 
-
 /* Calendar */
 
 .calendar {
@@ -302,12 +533,12 @@ p {
 
 .calendar .header .icon {
   cursor: pointer;
-  transition: .15s ease-out;
+  transition: 0.15s ease-out;
 }
 
 .calendar .header .icon:hover {
   transform: scale(1.75);
-  transition: .25s ease-out;
+  transition: 0.25s ease-out;
   color: var(--main-color);
 }
 
@@ -324,7 +555,7 @@ p {
   font-weight: 400;
   color: var(--text-color-light);
   font-size: 70%;
-  padding: .75em 0;
+  padding: 0.75em 0;
   border-bottom: 1px solid var(--border-color);
 }
 
@@ -345,7 +576,7 @@ p {
 
 .calendar .body .selected {
   border-left: 10px solid transparent;
-  border-image: linear-gradient(45deg, #1a8fff 0%,#53cbf1 40%);
+  border-image: linear-gradient(45deg, #1a8fff 0%, #53cbf1 40%);
   border-image-slice: 1;
 }
 
@@ -365,8 +596,8 @@ p {
   position: absolute;
   font-size: 82.5%;
   line-height: 1;
-  top: .75em;
-  right: .75em;
+  top: 0.75em;
+  right: 0.75em;
   font-weight: 700;
 }
 
@@ -382,21 +613,22 @@ p {
   opacity: 0;
   font-size: 8em;
   position: absolute;
-  top: -.2em;
-  right: -.05em;
-  transition: .25s ease-out;
-  letter-spacing: -.07em;
+  top: -0.2em;
+  right: -0.05em;
+  transition: 0.25s ease-out;
+  letter-spacing: -0.07em;
 }
 
-.calendar .body .cell:hover .bg, .calendar .body .selected .bg  {
+.calendar .body .cell:hover .bg,
+.calendar .body .selected .bg {
   opacity: 0.05;
-  transition: .5s ease-in;
+  transition: 0.5s ease-in;
 }
 
 .calendar .body .col {
   flex-grow: 0;
-  flex-basis: calc(100%/7);
-  width: calc(100%/7);
+  flex-basis: calc(100% / 7);
+  width: calc(100% / 7);
 }
 
 .calendar-holder {

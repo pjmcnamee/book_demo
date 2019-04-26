@@ -54,10 +54,8 @@ class LoginNav extends Component {
           <Link to="/login">
             <Button
               className="nav-button"
-              onClick={() => this.props.handleClick("loginClicked")}
               variant="secondary"
               size="lg"
-              disabled={this.props.state.loginClicked}
             >
               Login
             </Button>

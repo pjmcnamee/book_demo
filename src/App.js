@@ -3,18 +3,17 @@ import './App.css';
 import {HashRouter} from 'react-router-dom'
 import routes from './routes'
 import Header from './components/Header/Header';
-
+import { ParallaxProvider } from 'react-scroll-parallax';
 
 
 class App extends Component {
   render() {
     return (
+      <ParallaxProvider>
       <HashRouter>
-        <div className="jank">
-        <Header />
         {routes}
-        </div>
       </HashRouter>
+      </ParallaxProvider>
     );
   }
 }
