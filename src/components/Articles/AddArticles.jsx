@@ -7,6 +7,7 @@ import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { getData } from "../../ducks/userReducer";
 import swal from 'sweetalert';
+import Nav from "../NavBar/Nav";
 
 export class AddArticles extends Component {
   constructor(props) {
@@ -44,7 +45,10 @@ export class AddArticles extends Component {
 
   render() {
     return (
+      <div>
+        <Nav />
       <div className="component-holder">
+      <div><h1>Add Articles</h1></div>
         {this.props.admin ? <div> <Form>
           <Form.Group controlId="exampleForm.ControlInput1">
             <Form.Label>Articles Image</Form.Label>
@@ -97,6 +101,7 @@ export class AddArticles extends Component {
             Add Articles
           </Button>
         </div></div> : <div> <h2 className='admin-only'>Admins only on this page</h2> <Link to='/'>Back to Home Page</Link></div>}
+      </div>
       </div>
     );
   }

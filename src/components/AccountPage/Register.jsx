@@ -3,6 +3,7 @@ import Form from "react-bootstrap/Form";
 import { Link } from 'react-router-dom'
 import Button from "react-bootstrap/Button";
 import Axios from "axios";
+import Nav from '../NavBar/Nav'
 
 export class Login extends Component {
   constructor(props) {
@@ -52,7 +53,9 @@ register = async (e) => {
 
   render() {
     return (
-      <div className="component-holder">
+      <div>
+        <Nav />
+      <div className="component-holder register-holder">
         <h1 className="page-title">Register</h1>
         <Form>
           <Form.Group controlId="formBasicEmail">
@@ -98,6 +101,7 @@ register = async (e) => {
 		  </div>
         </Form>
         ;
+      </div>
       </div>
     );
   }

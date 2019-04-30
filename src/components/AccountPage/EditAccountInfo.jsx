@@ -6,6 +6,7 @@ import axios from "axios";
 import Form from "react-bootstrap/Form";
 import { Link } from "react-router-dom";
 import { withRouter } from "react-router-dom";
+import Nav from "../NavBar/Nav";
 
 export class EditAccountInfo extends Component {
   constructor(props) {
@@ -52,7 +53,12 @@ export class EditAccountInfo extends Component {
   render() {
     console.log("props", this.props);
     return (
+      <div>
+        <Nav />
       <div className="component-holder">
+      <div>
+          <h1>Edit Account Info</h1>
+        </div>
         <Form>
           <Form.Group controlId="formBasicEmail">
             <Form.Label className="form-label">Email address</Form.Label>
@@ -117,6 +123,7 @@ export class EditAccountInfo extends Component {
               </Button>
           </div>
         </Form>
+      </div>
       </div>
     );
   }

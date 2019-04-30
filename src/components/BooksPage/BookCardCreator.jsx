@@ -31,7 +31,7 @@ function BookCardCreator(props) {
 
   const BookSummary = () => (
     <OverlayTrigger trigger="click" placement="right" overlay={popover}>
-      <Button variant="success">Book Summary</Button>
+      <Button className='card-button' variant="success">Book Summary</Button>
     </OverlayTrigger>
   );
 
@@ -42,10 +42,10 @@ function BookCardCreator(props) {
         <Card.Body>
           <Card.Title>{props.book.book_title}</Card.Title>
           <Card.Text className="card-text">
-            <span className="card-span">Author: </span>
+            <span className="card-title">Author: </span>
             {props.book.book_author_name}
 
-            <span className="card-span">Book Price: </span>
+            <span className="card-title">Book Price: </span>
             {`$${props.book.book_price}`}
           </Card.Text>
           <BookSummary />

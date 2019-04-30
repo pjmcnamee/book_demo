@@ -5,9 +5,9 @@ const session = require("express-session");
 const authCtrl = require('./controllers/authCtrl')
 const accCtrl = require('./controllers/accCtrl')
 const bookCtrl = require('./controllers/bookCtrl')
-const adminCtrl = require('./controllers/adminCtrl')
 const articlesCtrl = require('./controllers/articlesCtrl')
 const newsLetterCtrl = require('./controllers/newsLetterCtrl')
+const eventsCtrl = require('./controllers/eventsCtrl')
 
 const { SERVER_PORT, SESSION_SECRET, CONNECTION_STRING } = process.env;
 
@@ -57,3 +57,8 @@ app.get('/api/articles', articlesCtrl.getArticles)
 
 //newsletter control
 app.post("/api/newsletter", newsLetterCtrl.subscribe)
+
+//event endpoints
+app.get('/api/events', eventsCtrl.getEvents)
+app.post('/api/events', eventsCtrl.addEvent)
+app.delete('/api/events/:id', eventsCtrl.deleteEvent)

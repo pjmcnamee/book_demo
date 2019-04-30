@@ -60,6 +60,10 @@ export class Home extends Component {
     await this.props.getOneBook();
   }
 
+  refreshBooks = () => {
+    this.props.getAllBooks();
+  }
+
   //Garden
 
   ParallaxSky = () => (
@@ -200,7 +204,6 @@ export class Home extends Component {
   );
 
   render() {
-    console.log(this.props);
     return (
       <div className="home">
         <div className="temp">
@@ -236,7 +239,7 @@ export class Home extends Component {
         </div>
         <div className="home-content">
           <div className="articles-holder">
-            <h2 className="news-title">Featured Articles</h2>
+            <h2 className="news-title articles-title">Featured Articles</h2>
             {this.state.articles.map(article => {
               return (
                 <ArticlesCardCreator
@@ -253,10 +256,11 @@ export class Home extends Component {
         </div>
         </div>
         <div className="book-home-holder">
-          <h2 className="news-title">Featured Book</h2>
+          <h2 className="off-color-title">Featured Book</h2>
           <BookCardCreator
             key={this.props.book.book_id}
             book={this.props.book}
+            refreshBooks={this.refreshBooks}
           />
         </div>
 
@@ -275,7 +279,6 @@ export class Home extends Component {
         </div>
 
         </div>
-        <div className="home-space-maker" />
         <Footer />
       </div>
     );

@@ -7,6 +7,7 @@ import { withRouter } from "react-router-dom";
 import { getData } from "../../ducks/userReducer";
 import { connect } from "react-redux";
 import swal from 'sweetalert';
+import Nav from "../NavBar/Nav";
 
 export class AddBookForm extends Component {
   constructor(props) {
@@ -63,6 +64,8 @@ export class AddBookForm extends Component {
 
   render() {
     return (
+      <div>
+        <Nav />
       <div className="component-holder">
         {this.props.admin ? <div> <h1 className="page-title">Add Book</h1>
         <Form>
@@ -129,6 +132,7 @@ export class AddBookForm extends Component {
             </Button>
           </div>
         </Form> </div> : <div> <h2 className='admin-only'>Admins only on this page</h2> <Link to='/'>Back to Home Page</Link></div>}
+      </div>
       </div>
     );
   }

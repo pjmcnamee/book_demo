@@ -74,6 +74,19 @@ CREATE TABLE newsletter_subscription (
 
 
 
+CREATE TABLE event (
+	event_id serial NOT NULL,
+	event_start_time varchar(20) NOT NULL,
+	event_end_time varchar(20) NOT NULL,
+	event_start_date varchar(20) NOT NULL,
+	event_end_date varchar(20) NOT NULL,
+	event_description TEXT NOT NULL,
+	CONSTRAINT event_pk PRIMARY KEY (event_id)
+) WITH (
+  OIDS=FALSE
+);
+
+
 ALTER TABLE purchases ADD CONSTRAINT purchases_fk0 FOREIGN KEY (account_id) REFERENCES account(account_id);
 
 ALTER TABLE purchases_info ADD CONSTRAINT purchases_info_fk0 FOREIGN KEY (purchases_id) REFERENCES purchases(purchases_id);

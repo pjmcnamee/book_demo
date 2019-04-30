@@ -13,6 +13,7 @@ import NewsLetter from './components/NewsLetter/NewsLetter'
 import Updates from './components/Updates/Updates'
 import AddArticles from "./components/Articles/AddArticles";
 import ArticlesDisplay from './components/Articles/ArticlesDisplay'
+import AddEvent from './components/EventsPage/AddEvent'
 
 export default (
   <Switch>
@@ -29,6 +30,7 @@ export default (
     <Route path='/newsletter' component={NewsLetter} />
     <Route path='/addArtical' component={AddArticles} />
     <Route path='/articlesDiplay' component={ArticlesDisplay} />
+    <Route path='/addEvent' component={AddEvent} />
   </Switch>
 );
 

@@ -36,7 +36,9 @@ export class Nav extends Component {
           </Button>
         </Link>
 
-        <Link to="/updates">
+      {/* zombie code incase i need to use endpoint - dont know if client wants it or to have it wrapped into events/articles */}
+        
+        {/* <Link to="/updates">
           <Button
             className="nav-button"
             // onClick={() => this.props.handleClick("updatesClicked")}
@@ -46,7 +48,7 @@ export class Nav extends Component {
           >
             Updates
           </Button>
-        </Link>
+        </Link> */}
 
         <Link to="/newsletter">
           <Button

@@ -3,7 +3,8 @@ import BookCardCreator from "./BookCardCreator";
 import { connect } from "react-redux";
 import { getAllBooks } from "../../ducks/booksReducer";
 import { getData } from "../../ducks/userReducer";
-
+import Nav from '../NavBar/Nav'
+import Footer from "../Footer/Footer";
 export class Books extends Component {
   componentDidMount() {
     this.props.getAllBooks();
@@ -16,6 +17,8 @@ export class Books extends Component {
 
   render() {
     return (
+      <div>
+        <Nav />
       <div className="book-main-holder">
         <h1 className="page-title">Books</h1>
         <div className="book-card-holder">
@@ -23,6 +26,8 @@ export class Books extends Component {
             return <BookCardCreator refreshBooks={this.refreshBooks} key={book.book_id} book={book} />
           })}
         </div>
+      </div>
+      <Footer />
       </div>
     );
   }

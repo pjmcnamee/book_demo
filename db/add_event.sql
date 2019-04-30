@@ -1,0 +1,1 @@
+insert into event (event_start_time, event_end_time, event_start_date, event_end_date, event_description) values ($1, $2, $3, $4, $5)

@@ -103,7 +103,7 @@ top: -16%;
 .nav-button-holder {
   display: flex;
   background-color: #372d3b;
-  z-index: 10;
+  z-index: 55;
   height: 65px;
   align-items: center;
   justify-content: center;
@@ -126,16 +126,27 @@ top: -16%;
 
 .real-article-holder {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   z-index: 2;
+  width: 90%
+}
+
+.articles-title {
+  padding-bottom: 55px;
+  padding-top: 55px;
 }
 
 .book-home-holder {
   display: flex;
+  position: relative;
+  z-index:10;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   background-color: #c4415D;
+  padding-bottom: 155px;
 }
 
 .articles-holder {
@@ -146,7 +157,23 @@ top: -16%;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding-bottom: 70px;
 }
+
+.inner-article-preview{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: space-between;
+}
+
+.article-preview {
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
 
 /* PARRALAX SHIZZZZZZZZZZZZZZZZZZ */
 
@@ -182,19 +209,32 @@ top: -16%;
   border: none;
 }
 
+.about-holder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #372d3b;
+}
+
 .component-holder {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: #372d3b;
+  height: 100vh;
 }
 
 .page-title {
-  color: white;
+  color: #ffffde;
   font-size: 85px;
 }
 
 .component-holder > div {
   padding-top: 25px;
+}
+
+.login-holder{
+  padding-top: 150px;
 }
 
 p {
@@ -212,6 +252,10 @@ p {
   font-size: 1.25rem;
   line-height: 1.5;
   border-radius: 0.3rem;
+}
+
+.btn-primary{
+  color: #ffffde;
 }
 
 .btn-primary:not(:disabled):not(.disabled).active,
@@ -242,6 +286,11 @@ p {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background: #372d3b;
+}
+
+.book-card{
+  padding: 15px;
 }
 
 .book-card-holder {
@@ -253,12 +302,18 @@ p {
 
 .card {
   margin-bottom: 15px;
+  background: #372d3b;
+  box-shadow: 0 0 20px 1px black;
+}
+
+.card-title {
+  color: #D94362;
 }
 
 .card-text {
   display: flex;
   flex-direction: column;
-  color: black;
+  color: #ffffde;
 }
 
 .card-span {
@@ -277,6 +332,18 @@ p {
   font-weight: bolder;
 }
 
+.card-button {
+  background: #D94362;
+  border: none;
+  color: #ffffde;
+}
+
+.login-button{
+  background: #D94362;
+  border: none;
+  color: #ffffde;
+}
+
 .twitter-holder {
   display: flex;
   flex-direction: column;
@@ -291,8 +358,7 @@ a{
   color: #ffffde
 }
 
-.article-image {
-  width: 200px;
+.article-image{
   height: 200px;
 }
 
@@ -335,10 +401,10 @@ h1,h2,h3,h4 {
 }
 
 .footer{
-  position: absolute;
+  position: relative;
   z-index: 10;
   width: 100%;
-  top: 395%;
+  bottom: 0;
   height: 300px;
   display: flex;
   background-color: #372d3b;
@@ -374,40 +440,44 @@ h1,h2,h3,h4 {
 /* THIRD PARALAX CRAP */
 
 .bottom-temp{
-  height: 100vh;
+  height: 98vh;
 }
+
+/* 318 */
 
 .pink-cave-roof {
   position: absolute;
   width: 100%;
-  top: 297%;
+  top: 333%;
   z-index: 7;
 }
 
 .purple-cave-roof {
   position: absolute;
   width: 100%;
-  top: 299%;
+  top: 335%;
   z-index:6;
 }
+
+/*  323 */
 
 .purple-cave-roof-trees {
   position: absolute;
   width: 100%;
-  top: 302%;
+  top: 338%;
   z-index: 5;
 }
 
 .purple-cave-close{
   position: absolute;
-  top: 302%;
+  top: 338%;
   z-index: 4;
   width: 97%;
 }
 
 .dark-purple-trees{
   position: absolute;
-  top: 345%;
+  top: 381%;
   z-index: 3;
   width: 100%;
 }
@@ -415,7 +485,7 @@ h1,h2,h3,h4 {
 .pink-trees{
   position: absolute;
   width: 100%;
-  top: 340%;
+  top: 376%;
   z-index: 3;
 }
 
@@ -433,206 +503,50 @@ h1,h2,h3,h4 {
 
 .bottom-cave {
   position: absolute;
-  top: 299%;
+  top: 335%;
   z-index: 2;
 }
 
-/* PASTED CSS CHECK THIS CRAP LATER */
-
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:300, 400, 700);
-@import url(https://fonts.googleapis.com/icon?family=Material+Icons);
-
-.icon {
-  font-family: "Material Icons", serif;
-  font-style: normal;
-  display: inline-block;
-  vertical-align: middle;
-  line-height: 1;
-  text-transform: none;
-  letter-spacing: normal;
-  word-wrap: normal;
-  white-space: nowrap;
-  direction: ltr;
-
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-  -moz-osx-font-smoothing: grayscale;
-  font-feature-settings: "liga";
+.off-color-title {
+  color: #ffffde;
 }
 
-/* VARIABLES */
-
-:root {
-  --main-color: #1a8fff;
-  --text-color: #777;
-  --text-color-light: #ccc;
-  --border-color: #eee;
-  --bg-color: #f9f9f9;
-  --neutral-color: #fff;
-}
-
-/* GENERAL */
-
-* {
-  box-sizing: border-box;
-}
-
-/* GRID */
-
-.row {
-  margin: 0;
-  padding: 0;
+.insta-holder {
+  width: 100%;
+  background: #372d3b;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: 100%;
-}
-
-.row-middle {
-  align-items: center;
-}
-
-.col {
-  flex-grow: 1;
-  flex-basis: 0;
-  max-width: 100%;
-}
-
-.col-start {
-  justify-content: flex-start;
-  text-align: left;
-}
-
-.col-center {
   justify-content: center;
-  text-align: center;
 }
 
-.col-end {
-  justify-content: flex-end;
-  text-align: right;
+.newsletter-holder {
+  padding-top: 125px;
 }
 
-/* Calendar */
-
-.calendar {
-  display: block;
-  position: relative;
-  width: 100%;
-  background: var(--neutral-color);
-  border: 1px solid var(--border-color);
+.register-holder {
+  padding-top: 100px;
 }
 
-.calendar .header {
-  text-transform: uppercase;
-  font-weight: 700;
-  font-size: 115%;
-  padding: 1.5em 0;
-  border-bottom: 1px solid var(--border-color);
+
+.footer {
+  display: flex;
+  flex-direction: column;
 }
 
-.calendar .header .icon {
-  cursor: pointer;
-  transition: 0.15s ease-out;
+.footer-contact{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.calendar .header .icon:hover {
-  transform: scale(1.75);
-  transition: 0.25s ease-out;
-  color: var(--main-color);
+.footer-links{
+  display: flex;
+  width: 25%;
+  justify-content: space-between
 }
 
-.calendar .header .icon:first-of-type {
-  margin-left: 1em;
-}
 
-.calendar .header .icon:last-of-type {
-  margin-right: 1em;
-}
 
-.calendar .days {
-  text-transform: uppercase;
-  font-weight: 400;
-  color: var(--text-color-light);
-  font-size: 70%;
-  padding: 0.75em 0;
-  border-bottom: 1px solid var(--border-color);
-}
 
-.calendar .body .cell {
-  position: relative;
-  height: 5em;
-  border-right: 1px solid var(--border-color);
-  overflow: hidden;
-  cursor: pointer;
-  background: var(--neutral-color);
-  transition: 0.25s ease-out;
-}
 
-.calendar .body .cell:hover {
-  background: var(--bg-color);
-  transition: 0.5s ease-out;
-}
 
-.calendar .body .selected {
-  border-left: 10px solid transparent;
-  border-image: linear-gradient(45deg, #1a8fff 0%, #53cbf1 40%);
-  border-image-slice: 1;
-}
-
-.calendar .body .row {
-  border-bottom: 1px solid var(--border-color);
-}
-
-.calendar .body .row:last-child {
-  border-bottom: none;
-}
-
-.calendar .body .cell:last-child {
-  border-right: none;
-}
-
-.calendar .body .cell .number {
-  position: absolute;
-  font-size: 82.5%;
-  line-height: 1;
-  top: 0.75em;
-  right: 0.75em;
-  font-weight: 700;
-}
-
-.calendar .body .disabled {
-  color: var(--text-color-light);
-  pointer-events: none;
-}
-
-.calendar .body .cell .bg {
-  font-weight: 700;
-  line-height: 1;
-  color: var(--main-color);
-  opacity: 0;
-  font-size: 8em;
-  position: absolute;
-  top: -0.2em;
-  right: -0.05em;
-  transition: 0.25s ease-out;
-  letter-spacing: -0.07em;
-}
-
-.calendar .body .cell:hover .bg,
-.calendar .body .selected .bg {
-  opacity: 0.05;
-  transition: 0.5s ease-in;
-}
-
-.calendar .body .col {
-  flex-grow: 0;
-  flex-basis: calc(100% / 7);
-  width: calc(100% / 7);
-}
-
-.calendar-holder {
-  padding-top: 25px;
-  margin: 0 auto;
-  width: 90%;
-}

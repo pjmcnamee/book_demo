@@ -20,12 +20,12 @@ class LoginNav extends Component {
   handleLogout = async () => {
     await this.props.killUser();
     await this.props.history.push("/");
-    this.props.handleClick("homeClicked");
+    // this.props.handleClick("homeClicked");
   };
 
   sendToAccountInfo = async () => {
     await this.props.history.push("/account");
-    this.props.resetClick();
+    // this.props.resetClick();
   };
 
   render() {
@@ -42,6 +42,7 @@ class LoginNav extends Component {
             <Dropdown.Item
               onClick={() => this.sendToAccountInfo()}
               eventKey="1"
+              className='drop-down-account'
             >
               Account Info
             </Dropdown.Item>

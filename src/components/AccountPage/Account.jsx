@@ -3,6 +3,7 @@ import { getData } from "../../ducks/userReducer";
 import { connect } from "react-redux";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
+import Nav from "../NavBar/Nav";
 
 export class Account extends Component {
   componentDidMount() {
@@ -11,6 +12,8 @@ export class Account extends Component {
 
   render() {
     return (
+      <div>
+        <Nav />
       <div className="component-holder">
         <h1 className="page-title">Account</h1>
         <div className="user-card">
@@ -39,6 +42,7 @@ export class Account extends Component {
 
           {this.props.admin ? (
             <div>
+              <h2>Admin stuff // need to add in google Ano to keep track of stats</h2>
               {" "}
               <h1 className="admin-only">Admin stuffz</h1>{" "}
               <p>some cool stuff to set up later</p>{" "}
@@ -52,9 +56,15 @@ export class Account extends Component {
               Add Book
             </Button>
           </Link>
+          <Link to='/addEvent'>
+            <Button variant="secondary" size="lg" active>
+              Add Event
+            </Button>
+          </Link>
             </div>
           ) : null} </div> : <div><Link to='/login'>Please login</Link></div>}
         </div>
+      </div>
       </div>
     );
   }
