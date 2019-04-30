@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './App.css';
 import {HashRouter} from 'react-router-dom'
 import routes from './routes'
-import Header from './components/Header/Header';
 import { ParallaxProvider } from 'react-scroll-parallax';
 
 
