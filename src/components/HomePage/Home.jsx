@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { TwitterTimelineEmbed, TwitterFollowButton } from "react-twitter-embed";
 import ArticlesCardCreator from "../Articles/ArticlesCardCreator";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
@@ -42,6 +41,10 @@ import Rays from '../../Cave/camada8-atmosfera.png'
 import YellowRay from '../../Cave/cascata-brilho.png'
 import BottomCave from '../../Cave/fundo.png'
 
+//Logo/Name
+
+import Logo from '../../images/LL.svg'
+
 export class Home extends Component {
   constructor(props) {
     super(props);
@@ -65,6 +68,12 @@ export class Home extends Component {
   }
 
   //Garden
+
+  ParallaxLogo = () => (
+    <Parallax className="tracey-logo" y={[0, 0]} tagOuter="figure">
+      <Image style={{ Width: "100%" }} src={Logo} />
+    </Parallax>
+  );
 
   ParallaxSky = () => (
     <Parallax className="sky-broken" y={[0, 0]} tagOuter="figure">
@@ -208,6 +217,7 @@ export class Home extends Component {
       <div className="home">
         <div className="temp">
           <div>
+            {this.ParallaxLogo()}
             {this.ParallaxSky()}
             {this.ParallaxRightTree()}
             {this.ParallaxLeftTree()}

@@ -57,6 +57,7 @@ export class NewsLetter extends Component {
               </Form.Text>
             </Form.Group>
             <Button
+              className='login-button'
               onClick={() => this.newsLetterSignUp()}
               variant="primary"
               type="submit"

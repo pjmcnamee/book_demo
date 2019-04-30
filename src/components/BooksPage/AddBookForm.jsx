@@ -40,7 +40,7 @@ export class AddBookForm extends Component {
       book_author_name: "",
       book_cover_img: ""
     })
-    this.props.history.push("/books");
+    this.props.history.push("/account");
   }
 
   addBook = async (e) => {

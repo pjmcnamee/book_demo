@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import InstagramEmbed from "react-instagram-embed";
 import Nav from "../NavBar/Nav";
 import Footer from "../Footer/Footer";
+import { TwitterTimelineEmbed, TwitterFollowButton } from "react-twitter-embed";
 
 export class About extends Component {
   render() {
@@ -35,8 +36,9 @@ export class About extends Component {
             </p>
           </div>
           <div>
-            <h3>Social Media</h3>
+            <h3 className='social-title'>Social Media</h3>
           </div>
+          <div className="social-holder">
           <div className="insta-holder">
             <InstagramEmbed
               url="https://www.instagram.com/p/BaN3d6LDqNA/"
@@ -50,6 +52,15 @@ export class About extends Component {
               onAfterRender={() => {}}
               onFailure={() => {}}
             />
+          </div>
+          <div className="twitter-holder">
+            <TwitterTimelineEmbed
+              sourceType="profile"
+              screenName="saurabhnemade"
+              options={{ height: 592 }}
+            />
+            <TwitterFollowButton screenName={"saurabhnemade"} />
+          </div>
           </div>
         </div>
         <Footer />
